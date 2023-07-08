@@ -35,11 +35,14 @@ public class MainApp {
          System.out.println();
       }
 
+      System.out.println("-------------------------------------------");
+
       List<Car> cars = userService.listCars();
       for (Car car : cars) {
          System.out.println("Id = "+car.getId());
          System.out.println("Model = "+car.getModel());
          System.out.println("Series = "+car.getSeries());
+         System.out.println("Keeper = "+userService.getUserByCar(car.getModel(), car.getSeries()).getFirstName());
          System.out.println();
       }
 
